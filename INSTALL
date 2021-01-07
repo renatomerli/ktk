@@ -1,0 +1,11 @@
+
+ To build, simply run the build script by running ./build.sh or do
+ #sh build.sh
+
+ To install run ./install.sh or do
+ #sh install.sh
+
+ Theres a demo in the demo directory. To build it, run the ./build.sh file.
+ It will create a file called demo that must be executed in the same directory
+by runnig ./demo command. Its just a test and you must use only the created 
+resources to dont generate a runtime error and abortion.

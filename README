@@ -1,0 +1,18 @@
+http://libemface.sf.net
+
+  Libemface is a library for embedded interface building.
+
+  The goal is to provide a embeddable interface builder for a set of "first level"
+widgets, giving to user the ability to create its own interfaces and
+re-configure it how many times he/she wants.
+
+  Its not to embed glade, but give to the user the ability to edit Cartesian
+positions and widget proprieties of labels, images, entrys and other GUI components 
+in real time.
+
+
+  At now, it currently have tree buildable components: image, label and a digital clock,
+that can be partially edited it real time, but not yet saved or restored.
+  So, it cannot be considered usable for its main use. I have released it in this
+version so i can share the development problems and pleasure with others.
+ 

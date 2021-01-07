@@ -1,0 +1,68 @@
+
+IMPORTANT: its a alpha release, API may change.
+
+
+Enface library was built on three main objects: TParent, Widedit and Toolbox.
+
+1. TParent: (TParent.h / cpp)
+The main object is a container (a Gtk::Fixed) that hold all operations. It 
+controls the interface and uses a internal child called TChild to do that.
+
+To create a interface, use a this class, its allmost like a Gtk::Fixed and should
+be used as it, so it can hold any Gtkmm widget. Its extra methods is:
+
+void Ktk::TParent::set_description (Glib::ustring _descrition) (NOT READY)
+sets a new interface from a descrition
+
+void Ktk::TParent::set_background (Glib::ustring _filename)  
+set the interface background to the image in the filename
+
+Glib::ustring Ktk::TParent::set_description () (NOT READY) 
+return a XML description of the interface currently displayed
+
+void Ktk::TParent set_editmode (bool _editmode) 
+set the mode of operation .When in editmode the child widgets can be edited and not
+used.
+
+bool Ktk::TParent get_editmode ()
+get the current state o editmode
+
+void Ktk::TParent set_movedark(bool _movedark)
+set wherever the widgets should be moved with transperency or not
+
+bool Ktk::TParent get_movedark()
+get the current state o movedark
+
+set_moving, set_clicked and other are for internal use.
+
+void Ktk::Tparent::set_widedit (TParent::Widedit &_widedit)
+sets the widget editor for the current interface, so it can updates it. See
+bellow to know what is a widedit.
+
+
+2. Widedit (widedit.h /cpp)
+
+Its a widget to build a propriety editor for widgets. Need to overloaded to
+recognize individual widgets.
+Have methods to update only image or proprieties, or the two.
+
+void Ktk::Widedit::set (Ktk::TChild & _tchild)
+set _tchild to be to currently edited widget
+
+void Ktk::Widedit::set_pixbuf (Glib::RefPtr<GdkPixbuf> _pbuf)
+set _pbuf as the image of the currently edited widget
+
+TChild * Ktk::TChild::get_widget()
+get a pointer to the widget being currently edited
+
+void update_allocation (GtkAllocation &_allocation)
+updates the indication of the position of the current widget on the widedit
+
+
+3. Toolbox  (toolbox.h /cpp)
+
+Its just a model to build a toolbox. Its here for convenience. Should be
+overladed to do any work.
+Have empty methods for any buttons as:
+cb_add_image, cb_add_label, and so on.
+
